@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.authForm {
+    background-color: #e9c46a;
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+
+.authForm>form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.authForm>form>input, .authForm>form>button {
+    background-color: rgb(52, 52, 52);
+    border: none;
+}
+
+.authForm>form>input {
+    padding: 10px;
+    border-radius: 10px;
+    color: gold;
+}
+
+.authForm>form>button {
+    width: 60%;
+    color: gold;
+    padding: 5px 0;
+    border-radius: 10px;
+}
