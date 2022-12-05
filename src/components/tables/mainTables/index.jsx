@@ -6,7 +6,6 @@ import { CompletedTable } from "../completed"
 import { InWorkTable } from "../inWork"
 import { PendingTable } from "../pending"
 import { DeclinedTable } from "../declined"
-import { OwnerTables } from "./ownerTables[unused]"
 
 export const MainTables = ({ ui }) => {
   const [currentTable, setCurrentTable] = useState("all")
@@ -40,7 +39,6 @@ export const MainTables = ({ ui }) => {
           currentTable={currentTable}
           setCurrentTable={setCurrentTable} />
         <PeriodSelector />
-        <OwnerTables />
       </div>
       {tableSwitchHandler()}
     </div>

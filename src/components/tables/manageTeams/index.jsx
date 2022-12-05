@@ -13,9 +13,10 @@ export const ManageTeamsTable = ({ data }) => {
           <ManageTeamsTbody
             key={index}
             number={index + 1}
-            fullName={item.farmer.name}
+            fullName={item.farmer.fullName}
             teamsForWork={item.teams}
-            userId={item.farmer.id} />
+            userId={item.farmer._id}
+            farmer={item.farmer} />
         ))}
       </table>
     </div>

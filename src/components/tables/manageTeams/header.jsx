@@ -5,7 +5,7 @@ export const ManageTeamsHeader = () => {
   return (
     <div className={ss.header} style={{ color: colors.table.title }}>
       <div>
-        Список фармеров
+        Управление командами
       </div>
       {/* <div>collapse</div> */}
     </div>

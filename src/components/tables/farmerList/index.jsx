@@ -13,11 +13,11 @@ export const FarmerListTable = ({ data }) => {
           <FarmerListTbody
             key={index}
             number={index + 1}
-            fullName={item._id.name}
-            role={item._id.position}
+            fullName={item.uid.fullName}
+            role={item.uid.role}
             quantity={item.quantity}
             valids={item.valid}
-            price={item.totalSum}
+            price={item.total}
             ui={item.userIdentity} />
         ))}
       </table>

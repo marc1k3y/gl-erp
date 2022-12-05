@@ -27,12 +27,12 @@ export const InWorkTbody = ({ data }) => {
         <tr key={index} style={{ backgroundColor: setTableRowColor(index) }}>
           <td>{index + 1}</td>
           <td>{converDate(item.dateCreated)}</td>
-          <td>{item.accountRequest.quantity}</td>
-          <td>{item.accountRequest.type.name}</td>
-          <td>{item.accountRequest.location.name}</td>
-          <td>{item.farmer ? item.farmer.name : item.buyer.name}</td>
+          <td>{item.quantity}</td>
+          <td>{item.type.name}</td>
+          <td>{item.location.iso}</td>
+          <td>{item.farmer ? item.farmer.fullName : item.buyer.fullName}</td>
           <td>{item.description}</td>
-          <td>{item.team.number}</td>
+          <td>{item.team.id}</td>
           <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
         </tr>
       ))}

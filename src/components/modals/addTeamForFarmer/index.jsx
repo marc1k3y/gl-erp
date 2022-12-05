@@ -38,7 +38,7 @@ export const AddTeamForFarmer = () => {
         <select value={currentNum} onChange={(e) => setCurrentNum(e.target.value)}>
           {teams && teams.map((teamNum, index) => (
             <option key={index}>
-              {teamNum.number}
+              {teamNum}
             </option>
           ))}
         </select>

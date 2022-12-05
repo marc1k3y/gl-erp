@@ -52,7 +52,7 @@ export const CloseOrder = () => {
   }
 
   function sendCloseOrderInfo() {
-    sendCloseOrder(closeOrderId, closeOrderInfo)
+    sendCloseOrder(closeOrderId, closeOrderInfo.currencyID, closeOrderInfo.price, closeOrderInfo.valid)
       .then(() => {
         if (fileToBeUpload) setOid(closeOrderId)
         else {
@@ -82,19 +82,22 @@ export const CloseOrder = () => {
     setLoading(true)
     closeOrderId && getOrderById(closeOrderId)
       .then((res) => {
+        console.log(res)
         setCloseOrderInfo({
-          accountType: res.accountRequest.type.name,
-          location: res.accountRequest.location.name,
-          buyer: res.buyer.name,
-          team: res.team.number,
+          accountType: res.type.name,
+          location: res.location.name,
+          buyer: res.buyer.fullName,
+          team: res.team.id,
           valid: res.valid,
-          quantity: res.accountRequest.quantity,
+          quantity: res.quantity,
           price: res.price,
           description: res.description,
         })
       })
     getCurrencies()
-      .then((res) => setCurrencies(res))
+      .then((res) => {
+        console.log(res);
+        setCurrencies(res)})
       .finally(() => setLoading(false))
   }, [closeOrderId])
 

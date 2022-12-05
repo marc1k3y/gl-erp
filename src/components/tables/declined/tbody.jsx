@@ -53,10 +53,10 @@ export const DeclinedTbody = ({ data, ui }) => {
           <td>{index + 1}</td>
           <td>{converDate(item.dateCreated)}</td>
           <td>{converDate(item.dateCancelled)}</td>
-          <td>{item.accountRequest.type.name}</td>
-          <td>{item.accountRequest.location.name}</td>
-          <td>{item.cancelledBy.name}</td>
-          <td>{item.denialReason}</td>
+          <td>{item.type.name}</td>
+          <td>{item.location.iso}</td>
+          <td>{item.cancelledBy.fullName}</td>
+          <td>{item.cancellationCause}</td>
           <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
           <Modal visible={approveModal} setVisible={setApproveModal}>
             <Approve approve={approve} title="Подтвердить возврат?" />

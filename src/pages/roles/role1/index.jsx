@@ -8,7 +8,7 @@ import { DenialReason } from "../../../components/modals/denialReason"
 import { EditOrder } from "../../../components/modals/editOrder"
 import { FarmerListTable } from "../../../components/tables/farmerList"
 import { createUserIdentity } from "../../../components/createUserIdentity"
-import { getBuyerListTable, getFarmerLeftListTable } from "../../../http/tablesApi"
+import { getBuyerListTable, getFarmerListTable } from "../../../http/tablesApi"
 import { setDenialReasonModalAction, setEditOrderModalAction } from "../../../store/modals/actions"
 import { MainTables } from "../../../components/tables/mainTables"
 
@@ -39,7 +39,7 @@ export const Role1Page = () => {
     setLoading(true)
     getBuyerListTable(period, request)
       .then((res) => setBlData(res))
-    getFarmerLeftListTable(ui)
+    getFarmerListTable(ui)
       .then((res) => setFlDdata(res))
       .finally(() => setLoading(false))
   }, [teamId])

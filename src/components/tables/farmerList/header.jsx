@@ -5,7 +5,7 @@ export const FarmerListHeader = () => {
   return (
     <div className={ss.header} style={{ color: colors.table.title }}>
       <div>
-        Управление командами
+        Список фармеров
       </div>
       {/* <div>collapse</div> */}
     </div>

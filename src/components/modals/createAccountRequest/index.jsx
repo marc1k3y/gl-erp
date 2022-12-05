@@ -52,7 +52,7 @@ export const CreateAccountRequest = () => {
 
   useEffect(() => {
     const newPrice = totalSum / quantity
-    setPrice(newPrice.toString())
+    setPrice(newPrice)
   }, [totalSum])
 
   useEffect(() => {

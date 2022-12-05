@@ -43,6 +43,8 @@ export const DeclinedTable = ({ ui }) => {
   if (loading) return <h1>Loading..</h1>
 
   if (!data) return
+
+  console.log(data);
   
   return (
     <div className={ss.wrapper}>

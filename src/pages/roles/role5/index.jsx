@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { createUserIdentity } from "../../../components/createUserIdentity"
 import { ManageTeamsTable } from "../../../components/tables/manageTeams"
-import { getFarmerLeftListTable, getFarmerRightListTable } from "../../../http/tablesApi"
+import { getFarmerListTable, getManageTeamsTable } from "../../../http/tablesApi"
 import { Modal } from "../../../components/UI/modal"
 import { DenialReason } from "../../../components/modals/denialReason"
 import { CloseOrder } from "../../../components/modals/closeOrder"
@@ -13,6 +13,7 @@ import { setCloseOrderModalAction, setDenialReasonModalAction } from "../../../s
 import { MainTables } from "../../../components/tables/mainTables"
 import { FarmerListTable } from "../../../components/tables/farmerList"
 import { MyButton } from "../../../components/UI/button"
+import { colors } from "../../../components/colors"
 
 export const Role5Page = () => {
   const dispatch = useDispatch()
@@ -55,22 +56,25 @@ export const Role5Page = () => {
 
   useEffect(() => {
     setLoading(true)
-    getFarmerLeftListTable(ui)
+    getFarmerListTable(ui)
       .then((res) => setDataLeft(res))
       .finally(() => setLoading(false))
-    getFarmerRightListTable(ui)
-      .then((res) => setDataRight(res))
+    getManageTeamsTable(ui)
+      .then((res) => {
+        console.log(res)
+        setDataRight(res)
+      })
       .finally(() => setLoading(false))
   }, [condition])
 
   if (loading) return <h1>Loading..</h1>
   return (
     <div className={ss.wrapper}>
-      <MyButton
-        onClick={() => setShowMy(!showMy)}
-        phalete="gold">
+      <button
+        style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}
+        onClick={() => setShowMy(!showMy)}>
         {showMy ? "Показать списки" : "Мои таблицы"}
-      </MyButton>
+      </button>
       {showTables()}
       <Modal visible={denialReasonModal} setVisible={setDenialModal}>
         <DenialReason />

@@ -8,13 +8,13 @@ import { setAddTeamForFarmerModalAction, setFarmerUiForRequestAction } from "../
 import { removeTeamForFarmer } from "../../../http/actionBtns"
 import { setUpdaterAction } from "../../../store/updater/actions"
 
-export const ManageTeamsTbody = ({ number, fullName, teamsForWork, userId }) => {
+export const ManageTeamsTbody = ({ number, fullName, teamsForWork, userId , farmer}) => {
   const dispatch = useDispatch()
   const ui = createUserIdentity()
   const farmerUi = { userID: userId.toString(), token: ui.token }
 
   function openAddTeamModal() {
-    dispatch(setFarmerUiForRequestAction(farmerUi))
+    dispatch(setFarmerUiForRequestAction(farmer))
     dispatch(setAddTeamForFarmerModalAction(true))
   }
 

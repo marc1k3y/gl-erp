@@ -6,7 +6,7 @@ export const DeclinedThead = () => {
       <tr>
         <th style={thStyles}>№</th>
         <th style={thStyles}>Дата создания</th>
-        <th style={thStyles}>Дата закрытия</th>
+        <th style={thStyles}>Дата отмены</th>
         <th style={thStyles}>Тип аккаунта</th>
         <th style={thStyles}>Локация</th>
         <th style={thStyles}>Отменил</th>

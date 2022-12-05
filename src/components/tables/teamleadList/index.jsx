@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { TeamleadListTbody } from "./tbody"
 import { TeamleadListThead } from "./thead"
 import { TeamleadListHeader } from "./header"
-import { getTeamListTable } from "../../../http/tablesApi"
+import { getTeamleadListTable } from "../../../http/tablesApi"
 
 export const TeamleadListTable = ({ ui, setTeamId }) => {
   const [loading, setLoading] = useState(false)
@@ -15,7 +15,7 @@ export const TeamleadListTable = ({ ui, setTeamId }) => {
   useEffect(() => {
     const period = { startDate, endDate }
     setLoading(true)
-    getTeamListTable(period, ui)
+    getTeamleadListTable(period, ui)
       .then((res) => setData(res))
       .finally(() => setLoading(false))
   }, [condition])

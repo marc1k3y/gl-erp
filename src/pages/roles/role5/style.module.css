@@ -6,6 +6,12 @@
     padding-top: 20px;
 }
 
+.wrapper>button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
 .topTables {
     display: flex;
     align-items: flex-start;

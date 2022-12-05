@@ -23,17 +23,17 @@ export const CompletedTbody = ({ data }) => {
         <tr key={index} style={{ backgroundColor: setTableRowColor(index) }}>
           <td>{index + 1}</td>
           <td>{converDate(item.dateCreated)}</td>
-          <td>{converDate(item.dateFinished)}</td>
-          <td>{item.accountRequest.quantity}</td>
+          <td>{converDate(item.dateCompleted)}</td>
+          <td>{item.quantity}</td>
           <td>{item.valid}</td>
           <td>{item.price}</td>
-          <td>{item.totalSum}</td>
+          <td>{item.total}</td>
           <td>{item.currency.iso}</td>
-          <td>{item.accountRequest.type.name}</td>
-          <td>{item.accountRequest.location.name}</td>
-          <td>{item.farmer ? item.farmer.name : item.buyer.name}</td>
+          <td>{item.type.name}</td>
+          <td>{item.location.iso}</td>
+          <td>{item.farmer ? item.farmer.fullName : item.buyer.fullName}</td>
           <td>{item.description}</td>
-          <td>{item.team.number}</td>
+          <td>{item.team.id}</td>
           <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
         </tr>
       ))}
