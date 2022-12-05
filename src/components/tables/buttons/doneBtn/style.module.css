@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.wrapper img {
+    height: 25px;
+}

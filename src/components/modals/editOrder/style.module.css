@@ -1,0 +1,88 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 15px;
+}
+
+.formWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.title {
+    /* color: gold; */
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.wrapper input {
+    width: 140px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    /* background-color: #343a40; */
+    /* color: gold; */
+}
+
+.wrapper select {
+    /* background-color: #343a40; */
+    /* color: gold; */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quantityPriceTotal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: gold; */
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.accountTypeCountryCurrency {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* background-color: gold; */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.quantity,
+.price,
+.totalSum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.country>div {
+    display: flex;
+    gap: 10px;
+}
+
+.right textarea {
+    /* background-color: #343a40; */
+    /* color: gold; */
+    /* border: 2px solid gold; */
+    padding: 5px;
+    border-radius: 5px;
+}

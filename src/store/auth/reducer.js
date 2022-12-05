@@ -1,16 +1,17 @@
-import { LOGOUT, SUCCESS_AUTH } from "./actions";
+import { LOGOUT, SUCCESS_AUTH } from "./actions"
 
-const defaultState = {
-  isAuth: false
+const initState = {
+    isAuth: false,
+    url: "http://84.201.138.62:9090/v1/"
 }
 
-export function AuthReducer(state = defaultState, action) {
-  switch (action.type) {
-    case SUCCESS_AUTH:
-      return { ...state, isAuth: true }
-    case LOGOUT:
-      return { ...state, isAuth: false }
-    default:
-      return state
-  }
+export function AuthReducer(state = initState, action) {
+    switch (action.type) {
+        case SUCCESS_AUTH:
+            return { ...state, isAuth: true }
+        case LOGOUT:
+            return { ...state, isAuth: false }
+        default:
+            return state
+    }
 }

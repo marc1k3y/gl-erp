@@ -1,5 +1,14 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+	min-height: 100vh;
+	/* background-color: #343a40; */
+	background-color: whitesmoke;
+	padding-top: 70px;
+	padding-bottom: 20px;
 }

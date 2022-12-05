@@ -1,0 +1,12 @@
+.wrapper {
+    width: 90%;
+    font-size: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    gap: 10px;
+}

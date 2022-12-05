@@ -1,0 +1,13 @@
+.wrapper {
+    padding: 5px;
+    /* background-color: gold; */
+    color: #343a40;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border: none;
+}
+
+/* .wrapper>option {
+    background-color: #343a40;
+    color: gold;
+} */

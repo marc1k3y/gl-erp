@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tables {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.farmerBuyerLists {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}

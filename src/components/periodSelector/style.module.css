@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: gold; */
+    padding: 5px;
+    border-radius: 5px;
+    overflow-x: scroll;
+}
+
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* .wrapper>label {
+    color: #343a40;
+} */
+
+.wrapper>input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    /* background-color: #343a40;
+    color: gold; */
+    font-size: 1.5rem;
+}
+
+.wrapper>input::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+}
+
+.wrapper>button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.wrapper>button>img {
+    width: 15px;
+}

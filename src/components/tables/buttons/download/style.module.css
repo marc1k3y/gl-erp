@@ -1,0 +1,9 @@
+.wrapper {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.wrapper img {
+    height: 20px;
+}

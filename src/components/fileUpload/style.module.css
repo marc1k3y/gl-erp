@@ -1,0 +1,63 @@
+.wrapper {
+    display: flex;
+    margin: 5px;
+    gap: 5px;
+    width: 100%;
+}
+
+.wrapper input[type="file"] {
+    display: none;
+}
+
+.uploadInput {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    font-family: monospace;
+}
+
+.uploadInput img {
+    width: 20px;
+}
+
+.uploadInput:hover img {
+    filter: invert(1);
+}
+
+.uploadInput:hover {
+    background-color: black;
+    color: white;
+}
+
+.progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
+
+.progressBar {
+    height: 10px;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    border-radius: 5px;
+}
+
+.progressLine {
+    height: 6px;
+    background-color: white;
+    border-radius: 5px;
+}

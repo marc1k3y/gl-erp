@@ -1,0 +1,99 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 15px;
+}
+
+.formWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.wrapper input {
+    width: 140px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    /* background-color: #343a40; */
+    /* color: gold; */
+}
+
+.wrapper select {
+    /* background-color: #343a40; */
+    /* color: gold; */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.title {
+    /* color: gold; */
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quantityPriceTotal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: gold; */
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.quantity,
+.price,
+.totalSum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.accountTypeCountryCurrency {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* background-color: gold; */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.accountType, .country, .currency {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.accountType>.label {
+    padding: 0 10px;
+}
+
+.labelIso {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 5px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+.right>textarea {
+    /* background-color: #343a40; */
+    /* color: gold; */
+    /* border: 2px solid gold; */
+    padding: 5px;
+    border-radius: 5px;
+}
