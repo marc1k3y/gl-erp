@@ -1,5 +1,4 @@
-import { $authHost, $host } from "."
-import { createUserIdentity } from "../components/createUserIdentity"
+import { $authHost } from "."
 
 // v2
 // modified

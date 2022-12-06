@@ -1,7 +1,4 @@
-import {
-  $authHost,
-  // $host
-} from "."
+import { $authHost } from "."
 
 // v2
 // modified

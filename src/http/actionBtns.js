@@ -1,10 +1,6 @@
-import {
-  $authHost,
-  $host
-} from "."
+import { $authHost } from "."
 
 // v2
-// modified
 export const sendStartStatus = async (orderId, ui) => {
   const { data } = await $authHost.put("accountRequests/take", {
     requestID: orderId
@@ -28,13 +24,11 @@ export const removeTeamForFarmer = async (farmer, teamNum) => {
   return data
 }
 
-// modified
 export const getOrderById = async (orderId) => {
   const { data } = await $authHost.get(`accountRequests/get?requestID=${orderId}`)
   return data
 }
 
-// modified
 export const returnFromDeclined = async (orderId, ui) => {
   const { data } = await $authHost.put("accountRequests/return", {
     requestID: orderId
