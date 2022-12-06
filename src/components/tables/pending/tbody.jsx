@@ -22,7 +22,7 @@ export const PendingTbody = ({ data, ui }) => {
           <StartBtn orderId={id} ui={ui} />}
         {canCancel.includes(roleID) &&
           <CancelBtn orderId={id} />}
-        {link && <a download href={link}>🔗</a>}
+        {link && <a download={link} href={fileApi + link}>🔗</a>}
       </div>
     )
   }
@@ -49,7 +49,7 @@ export const PendingTbody = ({ data, ui }) => {
           <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
-          <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
+          <td>{showActions(item._id, item.fileName)}</td>
         </tr>
       ))}
     </tbody>

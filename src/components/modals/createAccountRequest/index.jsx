@@ -38,7 +38,7 @@ export const CreateAccountRequest = () => {
 
     sendAccountRequest(ui, ar)
       .then((res) => {
-        if (fileToBeUpload) setOid(res.message)
+        if (fileToBeUpload) setOid(res)
         else {
           dispatch(setCreateAccountRequestModalAction(false))
           dispatch(setUpdaterAction())

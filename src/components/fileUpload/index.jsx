@@ -93,7 +93,7 @@ export const FileUpload = ({ oid, setOid, closeCb, fileToBeUpload, setFileToBeUp
       formData.append("file", chunk)
       formData.append("fileName", fileName)
       const response = await axios.post(
-        `${api}file/upload`,
+        `${api}files/upload`,
         formData,
         {
           params: {

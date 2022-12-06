@@ -38,7 +38,7 @@ export const DeclinedTbody = ({ data, ui }) => {
     return (
       <div className={ss.actions}>
         <ReturnBtn onClick={returnBtnHandler} />
-        {link && <a download href={link}>🔗</a>}
+        {link && <a download={link} href={fileApi + link}>🔗</a>}
       </div>)
   }
 
@@ -53,7 +53,7 @@ export const DeclinedTbody = ({ data, ui }) => {
           <td>{item.location.iso}</td>
           <td>{item.cancelledBy.fullName}</td>
           <td>{item.cancellationCause}</td>
-          <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
+          <td>{showActions(item._id, item.fileName)}</td>
           <Modal visible={approveModal} setVisible={setApproveModal}>
             <Approve approve={approve} title="Подтвердить возврат?" />
           </Modal>

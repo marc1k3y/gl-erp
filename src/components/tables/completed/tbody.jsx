@@ -13,7 +13,7 @@ export const CompletedTbody = ({ data }) => {
     return (
       <div className={ss.actions}>
         {canEdit.includes(roleId) && <EditOrderBtn orderId={id} />}
-        {link && <a download href={link}>🔗</a>}
+        {link && <a download={link} href={fileApi + link}>🔗</a>}
       </div>)
   }
 
@@ -44,7 +44,7 @@ export const CompletedTbody = ({ data }) => {
           <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
-          <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
+          <td>{showActions(item._id, item.fileName)}</td>
         </tr>
       ))}
     </tbody>

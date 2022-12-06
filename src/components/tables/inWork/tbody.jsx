@@ -16,7 +16,7 @@ export const InWorkTbody = ({ data }) => {
         {canClose.includes(roleId) &&
           <DoneBtn orderId={id} />}
         <CancelBtn orderId={id} />
-        {link && <a download href={link}>🔗</a>}
+        {link && <a download={link} href={fileApi + link}>🔗</a>}
       </div>
     )
   }
@@ -43,7 +43,7 @@ export const InWorkTbody = ({ data }) => {
           <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
-          <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
+          <td>{showActions(item._id, item.fileName)}</td>
         </tr>
       ))}
     </tbody>
