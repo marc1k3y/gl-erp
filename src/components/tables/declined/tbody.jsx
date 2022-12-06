@@ -42,10 +42,6 @@ export const DeclinedTbody = ({ data, ui }) => {
       </div>)
   }
 
-  function setTableDataColor(index) {
-    return index % 2 === 0 ? "wheat" : "rgb(200, 180, 150)"
-  }
-
   return (
     <tbody>
       {data && data.map((item, index) => (

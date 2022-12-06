@@ -21,6 +21,16 @@ export const InWorkTbody = ({ data }) => {
     )
   }
 
+  function setName(item) {
+    if (item.farmer.fullName) {
+      return item.farmer.fullName
+    } else if (item.buyer.fullName) {
+      return item.buyer.fullName
+    } else if (item.team.teamlead.fullName) {
+      return item.team.teamlead.fullName
+    }
+  }
+
   return (
     <tbody>
       {data && data.map((item, index) => (
@@ -30,7 +40,7 @@ export const InWorkTbody = ({ data }) => {
           <td>{item.quantity}</td>
           <td>{item.type.name}</td>
           <td>{item.location.iso}</td>
-          <td>{item.farmer.fullName ? item.farmer.fullName : item.buyer.fullName}</td>
+          <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
           <td>{showActions(item._id, fileApi + item.downloadLink)}</td>

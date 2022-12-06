@@ -34,7 +34,7 @@ export const Role2Page = () => {
     return (
       <div className={ss.buyerTables}>
         <BuyerListTable data={data} />
-        {buyerUi && <MainTables ui={buyerUi} />}
+        {buyerUi && <MainTables ui={buyerUi ? buyerUi : ui} />}
       </div>
     )
   }

@@ -24,10 +24,12 @@ export const CompletedTable = ({ ui }) => {
         result = "Фармер"
       } else if (data[0].buyer.fullName) {
         result = "Баер"
+      } else if (data[0].team.teamlead.fullName) {
+        result = "Тимлид"
       } else result = "Исполнитель"
     }
     setFarmerOrBuyer(result)
-  }, [data, condition])
+  }, [data])
 
   useEffect(() => {
     setLoading(true)
