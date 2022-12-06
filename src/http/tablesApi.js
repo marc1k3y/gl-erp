@@ -3,19 +3,10 @@ import {
   // $host
 } from "."
 
-function selectRequest(ui) {
-  if (ui.fullName) {
-    return true
-  } else {
-    return false
-  }
-}
-
 // v2
 // modified
 export const getPendingTable = async (startDate, endDate, ui) => {
-  const requestWithUi = selectRequest(ui)
-  if (requestWithUi) {
+  if (ui.fullName) {
     const { data } = await $authHost.post("tableData/teamlead/get", {
       period: {
         endDate: endDate,
@@ -86,7 +77,6 @@ export const getCompletedTable = async (startDate, endDate, ui) => {
     })
     return data
   } else {
-    console.log("yo");
     const { data } = await $authHost.get("tableData/get", {
       params: {
         status: "2",

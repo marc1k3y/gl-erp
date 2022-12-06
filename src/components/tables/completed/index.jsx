@@ -20,9 +20,9 @@ export const CompletedTable = ({ ui }) => {
   useEffect(() => {
     let result
     if (data) {
-      if (data[0].farmer) {
+      if (data[0].farmer.fullName) {
         result = "Фармер"
-      } else if (data[0].buyer) {
+      } else if (data[0].buyer.fullName) {
         result = "Баер"
       } else result = "Исполнитель"
     }

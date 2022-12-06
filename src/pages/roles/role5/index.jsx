@@ -19,10 +19,7 @@ export const Role5Page = () => {
   const dispatch = useDispatch()
   const ui = createUserIdentity()
 
-  const [myTables, setMyTables] = useState(true)
-  const [teamManage, setTeamManage] = useState(false)
   const [currentTable, setCurrentTable] = useState(0)
-
   const [loading, setLoading] = useState(false)
   const [farmerData, setFarmerData] = useState(null)
   const [teamManageData, setTeamManageData] = useState(null)
@@ -35,7 +32,7 @@ export const Role5Page = () => {
     switch (currentTable) {
       case 0:
         return <div className={ss.tables}>
-          <FarmerListTable data={farmerData} />
+          {!farmerUi && <FarmerListTable data={farmerData} />}
           {farmerUi && <MainTables ui={farmerUi} />}
         </div>
       case 1:
@@ -87,7 +84,10 @@ export const Role5Page = () => {
         </button>
         <button
           style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}
-          onClick={() => setCurrentTable(0)}>
+          onClick={() => {
+            dispatch(setFarmerUiAction(null))
+            setCurrentTable(0)
+          }}>
           Список фармеров
         </button>
       </div>

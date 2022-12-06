@@ -20,11 +20,11 @@ export const DeclinedTable = ({ ui }) => {
   useEffect(() => {
     let result
     if (data) {
-      if (data[0].farmer) {
-        result = "Farmer"
-      } else if (data[0].buyer) {
-        result = "Buyer"
-      } else result = "Worker"
+      if (data[0].farmer.fullName) {
+        result = "Фармер"
+      } else if (data[0].buyer.fullName) {
+        result = "Баер"
+      } else result = "Исполнитель"
     }
     setFarmerOrBuyer(result)
   }, [data])
@@ -44,8 +44,6 @@ export const DeclinedTable = ({ ui }) => {
 
   if (!data) return
 
-  console.log(data);
-  
   return (
     <div className={ss.wrapper}>
       <DeclinedHeader />

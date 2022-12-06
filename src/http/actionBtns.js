@@ -22,10 +22,8 @@ export const addTeamForFarmer = async (farmer, teamNum) => {
 
 export const removeTeamForFarmer = async (farmer, teamNum) => {
   const { data } = await $authHost.put("farmerAccess/revoke", {
-    accessRequest: {
-      farmer,
-      teamID: teamNum
-    }
+    farmer,
+    teamID: teamNum
   })
   return data
 }

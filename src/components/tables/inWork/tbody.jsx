@@ -30,7 +30,7 @@ export const InWorkTbody = ({ data }) => {
           <td>{item.quantity}</td>
           <td>{item.type.name}</td>
           <td>{item.location.iso}</td>
-          <td>{item.farmer ? item.farmer.fullName : item.buyer.fullName}</td>
+          <td>{item.farmer.fullName ? item.farmer.fullName : item.buyer.fullName}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
           <td>{showActions(item._id, fileApi + item.downloadLink)}</td>
