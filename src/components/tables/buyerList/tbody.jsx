@@ -11,14 +11,15 @@ export const TeamListTbody = ({
   valids,
   price,
   buyerId,
-  roleId
+  roleId,
+  uid
 }) => {
   const dispatch = useDispatch()
   const token = createUserIdentity().token
-  const buyerUi = { userID: buyerId.toString(), roleID: roleId.toString(), token }
+  // const buyerUi = { userID: buyerId.toString(), roleID: roleId.toString(), token }
 
   function setBuyerUserId() {
-    dispatch(setBuyerUiAction(buyerUi))
+    dispatch(setBuyerUiAction(uid))
     dispatch(setFarmerUiAction(null))
   }
   return (

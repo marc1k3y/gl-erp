@@ -124,7 +124,7 @@ export const getTeamleadListTable = async (period, ui) => {
 }
 
 export const getBuyerListTable = async (period, ui) => {
-  const { data } = await $authHost.get("accountRequests/aggregate/buyers", {
+  const { data } = await $authHost.get("tableData/aggregate/buyers", {
     params: {
       startDate: period?.startDate,
       endDate: period?.endDate

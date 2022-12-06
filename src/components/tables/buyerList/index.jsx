@@ -12,21 +12,19 @@ export const BuyerListTable = ({ data }) => {
       <table>
         <TeamListThead />
         {data
-          ? data.map((item, index) => (
+          && data.map((item, index) => (
             <TeamListTbody
               key={index}
               number={index + 1}
-              fullName={item._id.name}
-              role={item._id.position}
+              fullName={item.uid.fullName}
+              role={item.uid.role}
               quantity={item.quantity}
               valids={item.valid}
-              price={item.totalSum}
-              buyerId={item.userData.userID}
-              roleId={item.userData.roleID} />
-          ))
-          : <div className={ss.emptyDataText}>
-            Выберите Тимлида
-          </div>}
+              price={item.price}
+              buyerId={item.uid._id}
+              roleId={item.uid.role}
+              uid={item.uid} />
+          ))}
       </table>
     </div>
   )
