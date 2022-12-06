@@ -6,6 +6,7 @@ import { AddTeamForFarmerReducer } from "./addTeamForFarmer/reducer"
 import { ModalsReducer } from "./modals/reducer"
 import { FarmerBuyerTablesReducer } from "./farmerBuyerTables/reducer"
 import { TablesVisibleReducer } from "./tablesVisible/reducer"
+import { FileUploadReducer } from "./fileUpload/reducer"
 
 const rootReducer = combineReducers({
     auth: AuthReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     modals: ModalsReducer,
     updater: UpdaterReducer,
     period: PeriodReducer,
-    tablesVisible: TablesVisibleReducer
+    tablesVisible: TablesVisibleReducer,
+    fileUpload: FileUploadReducer
 })
 
 export const store = createStore(rootReducer)
