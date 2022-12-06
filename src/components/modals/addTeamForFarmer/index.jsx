@@ -6,7 +6,7 @@ import { setUpdaterAction } from "../../../store/updater/actions"
 import { setAddTeamForFarmerModalAction } from "../../../store/addTeamForFarmer/actions"
 import { addTeamForFarmer } from "../../../http/actionBtns"
 import { getDropdownTeams } from "../../../http/dropdownApi"
-import { ModalBtn } from "../modalBtn"
+import { colors } from "../../colors"
 
 export const AddTeamForFarmer = () => {
   const dispatch = useDispatch()
@@ -15,10 +15,11 @@ export const AddTeamForFarmer = () => {
   const [currentNum, setCurrentNum] = useState("")
 
   useEffect(() => {
+    console.log(farmerUiForRequest);
     getDropdownTeams(farmerUiForRequest)
       .then((res) => {
         setTeams(res)
-        setCurrentNum(res[0].number.toString())
+        res && setCurrentNum(res[0].toString())
       })
   }, [farmerUiForRequest])
 
@@ -43,9 +44,9 @@ export const AddTeamForFarmer = () => {
           ))}
         </select>
       </div>
-      <ModalBtn>
+      <button style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}>
         Добавить
-      </ModalBtn>
+      </button>
     </form>
   )
 }

@@ -19,8 +19,7 @@ export const ManageTeamsTbody = ({ number, fullName, teamsForWork, userId , farm
   }
 
   function removeHandler(value) {
-    console.log(value);
-    removeTeamForFarmer(farmerUi, value)
+    removeTeamForFarmer(farmer, value)
       .then((res) => {
         console.log(res);
         dispatch(setUpdaterAction())

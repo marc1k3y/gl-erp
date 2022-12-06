@@ -2,11 +2,11 @@ import { useDispatch } from "react-redux"
 import { setFarmerUiAction, setBuyerUiAction } from "../../../store/farmerBuyerTables/actions"
 import { setTableRowColor } from "../setTableRowColor"
 
-export const FarmerListTbody = ({ number, fullName, role, quantity, valids, price, ui }) => {
+export const FarmerListTbody = ({ number, fullName, role, quantity, valids, price, uid }) => {
   const dispatch = useDispatch()
 
   function setUiForRole2Tables() {
-    dispatch(setFarmerUiAction(ui))
+    dispatch(setFarmerUiAction(uid))
     dispatch(setBuyerUiAction(null))
   }
 

@@ -5,6 +5,12 @@
     gap: 30px;
 }
 
+.wrapper>button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 .wrapper>div {
     display: flex;
     align-items: center;

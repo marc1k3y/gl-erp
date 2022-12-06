@@ -3,53 +3,127 @@ import {
   // $host
 } from "."
 
+function selectRequest(ui) {
+  if (ui.fullName) {
+    return true
+  } else {
+    return false
+  }
+}
+
 // v2
 // modified
 export const getPendingTable = async (startDate, endDate, ui) => {
-  const { data } = await $authHost.get("tableData/get", {
-    params: {
-      status: "0",
-      startDate: startDate,
-      endDate: endDate
-    }
-  })
-  return data
+  const requestWithUi = selectRequest(ui)
+  if (requestWithUi) {
+    const { data } = await $authHost.post("tableData/teamlead/get", {
+      period: {
+        endDate: endDate,
+        startDate: startDate
+      },
+      status: 0,
+      uid: {
+        roleID: ui.role,
+        userID: ui._id,
+        username: ui.fullName
+      }
+    })
+    return data
+  } else {
+    const { data } = await $authHost.get("tableData/get", {
+      params: {
+        status: "0",
+        startDate: startDate,
+        endDate: endDate
+      }
+    })
+    return data
+  }
 }
 
 // modified
 export const getInWorkTable = async (startDate, endDate, ui) => {
-  const { data } = await $authHost.get("tableData/get", {
-    params: {
-      status: "1",
-      startDate: startDate,
-      endDate: endDate
-    }
-  })
-  return data
+  if (ui.fullName) {
+    const { data } = await $authHost.post("tableData/teamlead/get", {
+      period: {
+        endDate: endDate,
+        startDate: startDate
+      },
+      status: 1,
+      uid: {
+        roleID: ui.role,
+        userID: ui._id,
+        username: ui.fullName
+      }
+    })
+    return data
+  } else {
+    const { data } = await $authHost.get("tableData/get", {
+      params: {
+        status: "1",
+        startDate: startDate,
+        endDate: endDate
+      }
+    })
+    return data
+  }
 }
 
 // modified
 export const getCompletedTable = async (startDate, endDate, ui) => {
-  const { data } = await $authHost.get("tableData/get", {
-    params: {
-      status: "2",
-      startDate: startDate,
-      endDate: endDate
-    }
-  })
-  return data
+  if (ui.fullName) {
+    const { data } = await $authHost.post("tableData/teamlead/get", {
+      period: {
+        endDate: endDate,
+        startDate: startDate
+      },
+      status: 2,
+      uid: {
+        roleID: ui.role,
+        userID: ui._id,
+        username: ui.fullName
+      }
+    })
+    return data
+  } else {
+    console.log("yo");
+    const { data } = await $authHost.get("tableData/get", {
+      params: {
+        status: "2",
+        startDate: startDate,
+        endDate: endDate
+      }
+    })
+    return data
+  }
 }
 
 // modified
 export const getDeclinedTable = async (startDate, endDate, ui) => {
-  const { data } = await $authHost.get("tableData/get", {
-    params: {
-      status: "3",
-      startDate: startDate,
-      endDate: endDate
-    }
-  })
-  return data
+  if (ui.fullName) {
+    const { data } = await $authHost.post("tableData/teamlead/get", {
+      period: {
+        endDate: endDate,
+        startDate: startDate
+      },
+      status: 3,
+      uid: {
+        roleID: ui.role,
+        userID: ui._id,
+        username: ui.fullName
+      }
+    })
+    return data
+  } else {
+    const { data } = await $authHost.get("tableData/get", {
+      params: {
+        status: "3",
+        startDate: startDate,
+        endDate: endDate
+      }
+    })
+    return data
+  }
 }
 
 export const getTeamleadListTable = async (period, ui) => {
@@ -65,8 +139,8 @@ export const getTeamleadListTable = async (period, ui) => {
 export const getBuyerListTable = async (period, ui) => {
   const { data } = await $authHost.get("accountRequests/aggregate/buyers", {
     params: {
-      startDate: period.startDate,
-      endDate: period.endDate
+      startDate: period?.startDate,
+      endDate: period?.endDate
     }
   })
   return data
@@ -75,8 +149,8 @@ export const getBuyerListTable = async (period, ui) => {
 export const getFarmerListTable = async (period, ui) => {
   const { data } = await $authHost.get("tableData/aggregate/farmers", {
     params: {
-      startDate: period.startDate,
-      endDate: period.endDate
+      startDate: period?.startDate,
+      endDate: period?.endDate
     }
   })
   return data

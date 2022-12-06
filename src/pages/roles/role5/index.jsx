@@ -12,34 +12,37 @@ import { setAddTeamForFarmerModalAction } from "../../../store/addTeamForFarmer/
 import { setCloseOrderModalAction, setDenialReasonModalAction } from "../../../store/modals/actions"
 import { MainTables } from "../../../components/tables/mainTables"
 import { FarmerListTable } from "../../../components/tables/farmerList"
-import { MyButton } from "../../../components/UI/button"
 import { colors } from "../../../components/colors"
+import { setFarmerUiAction } from "../../../store/farmerBuyerTables/actions"
 
 export const Role5Page = () => {
   const dispatch = useDispatch()
   const ui = createUserIdentity()
 
-  const [showMy, setShowMy] = useState(true)
+  const [myTables, setMyTables] = useState(true)
+  const [teamManage, setTeamManage] = useState(false)
+  const [currentTable, setCurrentTable] = useState(0)
+
   const [loading, setLoading] = useState(false)
-  const [dataLeft, setDataLeft] = useState(null)
-  const [dataRight, setDataRight] = useState(null)
+  const [farmerData, setFarmerData] = useState(null)
+  const [teamManageData, setTeamManageData] = useState(null)
   const { condition } = useSelector(state => state.updater)
   const { farmerUi } = useSelector(state => state.farmerBuyerTables)
   const { denialReasonModal, closeOrderModal } = useSelector(state => state.modals)
   const { addTeamModal } = useSelector(state => state.addTeamForFarmer)
 
   function showTables() {
-    if (showMy) return <MainTables ui={ui} />
-    return (
-      <div className={ss.manageTables}>
-        <div className={ss.topTables}>
-          <FarmerListTable data={dataLeft} />
-          <ManageTeamsTable data={dataRight} />
+    switch (currentTable) {
+      case 0:
+        return <div className={ss.tables}>
+          <FarmerListTable data={farmerData} />
+          {farmerUi && <MainTables ui={farmerUi} />}
         </div>
-        {farmerUi &&
-          <MainTables ui={farmerUi} />}
-      </div>
-    )
+      case 1:
+        return <ManageTeamsTable data={teamManageData} />
+      case 2:
+        return <MainTables ui={ui} />
+    }
   }
 
   function setDenialModal(payload) {
@@ -55,26 +58,39 @@ export const Role5Page = () => {
   }
 
   useEffect(() => {
+    currentTable === 2 && dispatch(setFarmerUiAction(null))
+  }, [currentTable])
+
+  useEffect(() => {
     setLoading(true)
-    getFarmerListTable(ui)
-      .then((res) => setDataLeft(res))
+    getFarmerListTable()
+      .then((res) => setFarmerData(res))
       .finally(() => setLoading(false))
     getManageTeamsTable(ui)
-      .then((res) => {
-        console.log(res)
-        setDataRight(res)
-      })
+      .then((res) => setTeamManageData(res))
       .finally(() => setLoading(false))
   }, [condition])
 
   if (loading) return <h1>Loading..</h1>
   return (
     <div className={ss.wrapper}>
-      <button
-        style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}
-        onClick={() => setShowMy(!showMy)}>
-        {showMy ? "Показать списки" : "Мои таблицы"}
-      </button>
+      <div className={ss.buttons}>
+        <button
+          style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}
+          onClick={() => setCurrentTable(2)}>
+          Мои таблицы
+        </button>
+        <button
+          style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}
+          onClick={() => setCurrentTable(1)}>
+          Управление командами
+        </button>
+        <button
+          style={{ color: colors.button.font, backgroundColor: colors.button.bckg }}
+          onClick={() => setCurrentTable(0)}>
+          Список фармеров
+        </button>
+      </div>
       {showTables()}
       <Modal visible={denialReasonModal} setVisible={setDenialModal}>
         <DenialReason />

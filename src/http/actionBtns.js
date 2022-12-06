@@ -12,17 +12,19 @@ export const sendStartStatus = async (orderId, ui) => {
   return data
 }
 
-export const addTeamForFarmer = async (ui, teamNum) => {
+export const addTeamForFarmer = async (farmer, teamNum) => {
   const { data } = await $authHost.post("farmerAccess/add", {
-    teamID: teamNum
+    teamID: parseInt(teamNum),
+    farmer
   })
   return data
 }
 
-export const removeTeamForFarmer = async (ui, teamNum) => {
-  const { data } = await $authHost.post("team/access/revoke", {
-    teamEdit: {
-      teamID: teamNum.toString()
+export const removeTeamForFarmer = async (farmer, teamNum) => {
+  const { data } = await $authHost.put("farmerAccess/revoke", {
+    accessRequest: {
+      farmer,
+      teamID: teamNum
     }
   })
   return data
