@@ -11,8 +11,8 @@ import { Loader } from "../../components/UI/loader"
 
 export const AuthPage = () => {
   const dispatch = useDispatch()
-  const [email, setEmail] = useState("buyer@mail.com")
-  const [password, setPassword] = useState("!Buyer123")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
 
   function auth(e) {
@@ -28,7 +28,6 @@ export const AuthPage = () => {
   useEffect(() => {
     setLoading(true)
     const token = window.location.href.split("/")[3]
-    console.log(token);
     if (token) {
       const decode = jwtDecode(token)
       localStorage.setItem("userID", decode.UserId)
