@@ -35,13 +35,13 @@ export const Role1Page = () => {
       case 0:
         return <TeamleadListTable ui={ui} setTeamleadId={setTeamleadId} />
       case 1:
-        return <div>
-          <FarmerListTable data={flData} width="45%" />
+        return <div className={ss.roleTables}>
+          <FarmerListTable data={flData} />
           {farmerUi && <MainTables ui={farmerUi} />}
         </div>
       case 2:
-        return <div>
-          <BuyerListTable data={blData} width="45%" />
+        return <div className={ss.roleTables}>
+          <BuyerListTable data={blData} />
           {buyerUi && <MainTables ui={buyerUi} />}
         </div>
       default:
