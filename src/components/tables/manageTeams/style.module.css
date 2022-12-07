@@ -37,9 +37,8 @@ th {
 
 .actions {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .actions a {

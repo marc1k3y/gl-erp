@@ -150,6 +150,20 @@ export const getManageTeamsTable = async (ui) => {
   return data
 }
 
+export const addAllAccessTeamManage = async (farmer) => {
+  const { data } = await $authHost.put("farmerAccess/add/all",
+    { farmer }
+  )
+  return data
+}
+
+export const revokeAllAccessTeamManage = async (farmer) => {
+  const { data } = await $authHost.put("farmerAccess/revoke/all",
+    { farmer }
+  )
+  return data
+}
+
 // v1
 // export const getPendingTable = async (startDate, endDate, ui) => {
 //     const { data } = await $host.post("accountRequests/get/pending", {

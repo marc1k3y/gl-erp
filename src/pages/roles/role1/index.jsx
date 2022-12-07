@@ -44,6 +44,8 @@ export const Role1Page = () => {
           <BuyerListTable data={blData} width="45%" />
           {buyerUi && <MainTables ui={buyerUi} />}
         </div>
+      default:
+        return <TeamleadListTable ui={ui} setTeamleadId={setTeamleadId} />
     }
   }
 
