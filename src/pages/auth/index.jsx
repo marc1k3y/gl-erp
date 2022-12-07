@@ -33,6 +33,7 @@ export const AuthPage = () => {
       localStorage.setItem("userID", decode.UserId)
       localStorage.setItem("roleID", decode.RoleId)
       localStorage.setItem("teamID", decode.TeamId)
+      localStorage.setItem("token", token)
       dispatch(successAuthAction())
       setLoading(false)
     } else {
