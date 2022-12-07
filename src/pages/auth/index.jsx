@@ -7,6 +7,7 @@ import { successAuthAction } from "../../store/auth/actions"
 import { check, login } from "../../http/authApi"
 import { MyButton } from "../../components/UI/button"
 import { colors } from "../../components/colors"
+import { Loader } from "../../components/UI/loader"
 
 export const AuthPage = () => {
   const dispatch = useDispatch()
@@ -44,7 +45,7 @@ export const AuthPage = () => {
     }
   }, [])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader brandLogo size={"l"} />
 
   return (
     <div className={ss.wrapper}>

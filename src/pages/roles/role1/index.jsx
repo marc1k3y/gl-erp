@@ -13,6 +13,7 @@ import { setDenialReasonModalAction, setEditOrderModalAction } from "../../../st
 import { MainTables } from "../../../components/tables/mainTables"
 import { colors } from "../../../components/colors"
 import { setFarmerUiAction } from "../../../store/farmerBuyerTables/actions"
+import { Loader } from "../../../components/UI/loader"
 
 export const Role1Page = () => {
   const dispatch = useDispatch()
@@ -66,7 +67,7 @@ export const Role1Page = () => {
       .finally(() => setLoading(false))
   }, [teamleadId])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
   return (
     <div className={ss.wrapper}>
       <div className={ss.buttons}>

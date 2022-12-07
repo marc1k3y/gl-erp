@@ -6,6 +6,7 @@ import { CompletedThead } from "./thead"
 import { CompletedHeader } from "./header"
 import { getCompletedTable } from "../../../http/tablesApi"
 import { setCompletedVisibleAction } from "../../../store/tablesVisible/actions"
+import { Loader } from "../../UI/loader"
 
 export const CompletedTable = ({ ui }) => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ export const CompletedTable = ({ ui }) => {
       .finally(() => setLoading(false))
   }, [startDate, endDate, condition])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
 
   if (!data) return
 

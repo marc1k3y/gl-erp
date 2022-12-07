@@ -5,6 +5,7 @@ import { TeamleadListTbody } from "./tbody"
 import { TeamleadListThead } from "./thead"
 import { TeamleadListHeader } from "./header"
 import { getTeamleadListTable } from "../../../http/tablesApi"
+import { Loader } from "../../UI/loader"
 
 export const TeamleadListTable = ({ ui, setTeamleadId }) => {
   const [loading, setLoading] = useState(false)
@@ -22,7 +23,7 @@ export const TeamleadListTable = ({ ui, setTeamleadId }) => {
 
   console.log(data);
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
   return (
     <div className={ss.wrapper}>
       <TeamleadListHeader />

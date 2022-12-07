@@ -6,6 +6,7 @@ import { PendingTbody } from "./tbody"
 import { PendingThead } from "./thead"
 import { PendingHeader } from "./header"
 import { setPendingVisibleAction } from "../../../store/tablesVisible/actions"
+import { Loader } from "../../UI/loader"
 
 export const PendingTable = ({ ui }) => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ export const PendingTable = ({ ui }) => {
       .finally(() => setLoading(false))
   }, [startDate, endDate, condition])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
 
   if (!data) return
 

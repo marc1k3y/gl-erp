@@ -6,6 +6,7 @@ import { DeclinedThead } from "./thead"
 import { DeclinedHeader } from "./header"
 import { getDeclinedTable } from "../../../http/tablesApi"
 import { setDeclinedVisibleAction } from "../../../store/tablesVisible/actions"
+import { Loader } from "../../UI/loader"
 
 export const DeclinedTable = ({ ui }) => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ export const DeclinedTable = ({ ui }) => {
       .finally(() => setLoading(false))
   }, [startDate, endDate, condition])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
 
   if (!data) return
 

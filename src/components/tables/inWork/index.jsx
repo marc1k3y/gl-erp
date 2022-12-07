@@ -6,6 +6,7 @@ import { InWorkThead } from "./thead"
 import { InWorkHeader } from "./header"
 import { getInWorkTable } from "../../../http/tablesApi"
 import { setInWorkVisibleAction } from "../../../store/tablesVisible/actions"
+import { Loader } from "../../UI/loader"
 
 export const InWorkTable = ({ ui }) => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ export const InWorkTable = ({ ui }) => {
       .finally(() => setLoading(false))
   }, [startDate, endDate, condition])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
 
   if (!data) return
 

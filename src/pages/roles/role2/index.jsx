@@ -12,6 +12,7 @@ import { CreateAccountRequest } from "../../../components/modals/createAccountRe
 import { colors } from "../../../components/colors"
 import { setBuyerUiAction } from "../../../store/farmerBuyerTables/actions"
 import { setCreateAccountRequestModalAction, setDenialReasonModalAction, setEditOrderModalAction } from "../../../store/modals/actions"
+import { Loader } from "../../../components/UI/loader"
 
 export const Role2Page = () => {
   const dispatch = useDispatch()
@@ -66,7 +67,7 @@ export const Role2Page = () => {
       .finally(() => setLoading(false))
   }, [condition, showMy])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
   return (
     <div className={ss.wrapper}>
       <div className={ss.topButtons}>

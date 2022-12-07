@@ -14,6 +14,7 @@ import { MainTables } from "../../../components/tables/mainTables"
 import { FarmerListTable } from "../../../components/tables/farmerList"
 import { colors } from "../../../components/colors"
 import { setFarmerUiAction } from "../../../store/farmerBuyerTables/actions"
+import { Loader } from "../../../components/UI/loader"
 
 export const Role5Page = () => {
   const dispatch = useDispatch()
@@ -68,7 +69,7 @@ export const Role5Page = () => {
       .finally(() => setLoading(false))
   }, [condition])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader size={"m"} />
   return (
     <div className={ss.wrapper}>
       <div className={ss.buttons}>
