@@ -27,6 +27,7 @@ export const AuthPage = () => {
   useEffect(() => {
     setLoading(true)
     const token = window.location.href.split("/")[3]
+    console.log(token);
     if (token) {
       const decode = jwtDecode(token)
       localStorage.setItem("userID", decode.UserId)
