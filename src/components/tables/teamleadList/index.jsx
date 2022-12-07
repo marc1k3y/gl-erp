@@ -6,7 +6,7 @@ import { TeamleadListThead } from "./thead"
 import { TeamleadListHeader } from "./header"
 import { getTeamleadListTable } from "../../../http/tablesApi"
 
-export const TeamleadListTable = ({ ui, setTeamId }) => {
+export const TeamleadListTable = ({ ui, setTeamleadId }) => {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState(null)
   const { condition } = useSelector(state => state.updater)
@@ -20,6 +20,8 @@ export const TeamleadListTable = ({ ui, setTeamId }) => {
       .finally(() => setLoading(false))
   }, [condition])
 
+  console.log(data);
+
   if (loading) return <h1>Loading..</h1>
   return (
     <div className={ss.wrapper}>
@@ -28,15 +30,15 @@ export const TeamleadListTable = ({ ui, setTeamId }) => {
         <TeamleadListThead />
         {data && data.map((item, index) => (
           <TeamleadListTbody
-            key={item._id.teamlead.id}
-            teamLeadId={item._id.teamlead.id}
+            key={item.uid.id}
             number={index + 1}
-            team={item._id.number}
-            teamLead={item._id.teamlead.name}
+            teamLeadId={item.uid.teamlead._id}
+            team={item.uid.id}
+            teamLead={item.uid.teamlead.fullName}
             quantity={item.quantity}
             valids={item.valid}
             price={item.price}
-            setTeamId={setTeamId} />
+            setTeamleadId={setTeamleadId} />
         ))}
       </table>
     </div>

@@ -123,11 +123,13 @@ export const getTeamleadListTable = async (period, ui) => {
   return data
 }
 
-export const getBuyerListTable = async (period, ui) => {
+export const getBuyerListTable = async (period, teamleadId) => {
+  console.log(teamleadId);
   const { data } = await $authHost.get("tableData/aggregate/buyers", {
     params: {
       startDate: period?.startDate,
-      endDate: period?.endDate
+      endDate: period?.endDate,
+      teamleadID: teamleadId ? teamleadId : null
     }
   })
   return data

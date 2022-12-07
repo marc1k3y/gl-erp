@@ -8,10 +8,10 @@ export const TeamleadListTbody = ({
   quantity,
   valids,
   price,
-  setTeamId
+  setTeamleadId
 }) => {
   return (
-    <tbody onClick={() => setTeamId(teamLeadId.toString())}>
+    <tbody onClick={() => setTeamleadId(teamLeadId.toString())}>
       <tr style={{ backgroundColor: setTableRowColor(number) }}>
         <td>
           {number}
