@@ -20,9 +20,10 @@ export const BuyerListTable = ({ data }) => {
               role={item.uid.role}
               quantity={item.quantity}
               valids={item.valid}
-              price={item.price}
-              buyerId={item.uid._id}
-              roleId={item.uid.role}
+              // price={item.price}
+              total={item.total}
+              // buyerId={item.uid._id}
+              // roleId={item.uid.role}
               uid={item.uid} />
           ))}
       </table>

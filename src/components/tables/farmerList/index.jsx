@@ -17,7 +17,8 @@ export const FarmerListTable = ({ data }) => {
             role={item.uid.role}
             quantity={item.quantity}
             valids={item.valid}
-            price={item.total}
+            total={item.total}
+            // price={item.price}
             uid={item.uid} />
         ))}
       </table>

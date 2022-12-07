@@ -7,30 +7,20 @@ export const TeamleadListTbody = ({
   teamLeadId,
   quantity,
   valids,
-  price,
+  // price,
+  total,
   setTeamleadId
 }) => {
   return (
     <tbody onClick={() => setTeamleadId(teamLeadId.toString())}>
       <tr style={{ backgroundColor: setTableRowColor(number) }}>
-        <td>
-          {number}
-        </td>
-        <td>
-          {team}
-        </td>
-        <td>
-          {teamLead}
-        </td>
-        <td>
-          {quantity}
-        </td>
-        <td>
-          {valids}
-        </td>
-        <td>
-          {price}
-        </td>
+        <td>{number}</td>
+        <td>{team}</td>
+        <td>{teamLead}</td>
+        <td>{quantity}</td>
+        <td>{valids}</td>
+        {/* <td>{price}</td> */}
+        <td>{total}</td>
       </tr>
     </tbody>
   )

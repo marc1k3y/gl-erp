@@ -37,7 +37,8 @@ export const TeamleadListTable = ({ ui, setTeamleadId }) => {
             teamLead={item.uid.teamlead.fullName}
             quantity={item.quantity}
             valids={item.valid}
-            price={item.price}
+            // price={item.price}
+            total={item.total}
             setTeamleadId={setTeamleadId} />
         ))}
       </table>

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { setFarmerUiAction, setBuyerUiAction } from "../../../store/farmerBuyerTables/actions"
-import { createUserIdentity } from "../../createUserIdentity"
 import { setTableRowColor } from "../setTableRowColor"
+// import { createUserIdentity } from "../../createUserIdentity"
 
 export const TeamListTbody = ({
   number,
@@ -9,13 +9,14 @@ export const TeamListTbody = ({
   role,
   quantity,
   valids,
-  price,
-  buyerId,
-  roleId,
+  total,
+  // price,
+  // buyerId,
+  // roleId,
   uid
 }) => {
   const dispatch = useDispatch()
-  const token = createUserIdentity().token
+  // const token = createUserIdentity().token
   // const buyerUi = { userID: buyerId.toString(), roleID: roleId.toString(), token }
 
   function setBuyerUserId() {
@@ -41,7 +42,7 @@ export const TeamListTbody = ({
           {valids}
         </td>
         <td>
-          {price}
+          {total}
         </td>
       </tr>
     </tbody>
