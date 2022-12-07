@@ -61,7 +61,7 @@ export const Role2Page = () => {
 
   useEffect(() => {
     setLoading(true)
-    getBuyerListTable(period, ui)
+    getBuyerListTable(period)
       .then((res) => setData(res))
       .finally(() => setLoading(false))
   }, [condition, showMy])

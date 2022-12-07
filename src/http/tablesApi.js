@@ -129,7 +129,7 @@ export const getBuyerListTable = async (period, teamleadId) => {
     params: {
       startDate: period?.startDate,
       endDate: period?.endDate,
-      teamleadID: teamleadId ? teamleadId : null
+      teamleadID: teamleadId ? teamleadId : ""
     }
   })
   return data
