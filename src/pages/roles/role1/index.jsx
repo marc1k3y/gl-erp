@@ -65,7 +65,7 @@ export const Role1Page = () => {
     getFarmerListTable(ui)
       .then((res) => setFlDdata(res))
       .finally(() => setLoading(false))
-  }, [teamleadId])
+  }, [teamleadId, farmerUi, buyerUi])
 
   if (loading) return <Loader size={"m"} />
   return (

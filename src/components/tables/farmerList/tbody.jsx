@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { setFarmerUiAction, setBuyerUiAction } from "../../../store/farmerBuyerTables/actions"
 import { setTableRowColor } from "../setTableRowColor"
 
-export const FarmerListTbody = ({ number, fullName, role, quantity, valids, price, uid, total }) => {
+export const FarmerListTbody = ({ number, fullName, role, quantity, valids, uid, total }) => {
   const dispatch = useDispatch()
 
   function setUiForRole2Tables() {
@@ -19,7 +19,6 @@ export const FarmerListTbody = ({ number, fullName, role, quantity, valids, pric
         <td>{quantity}</td>
         <td>{valids}</td>
         <td>{total}</td>
-        {/* <td>{price}</td> */}
       </tr>
     </tbody>
   )
