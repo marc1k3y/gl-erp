@@ -55,6 +55,7 @@ export const EditOrder = () => {
   }, [modifyInfo.totalSum])
 
   useEffect(() => {
+    console.log(orderIdForUpdate);
     setLoading(true)
     orderIdForUpdate && getOrderById(orderIdForUpdate)
       .then((res) => {
@@ -132,7 +133,7 @@ export const EditOrder = () => {
                 value={modifyInfo.accountType}
                 onChange={(e) => setModifyInfo({ ...modifyInfo, accountType: e.target.value })}>
                 {accountTypes?.map((at, index) => (
-                  <option key={index} value={at.name}>{at.name}</option>
+                  <option key={index} value={at._id}>{at.name}</option>
                 ))}
               </select>
             </div>
@@ -144,7 +145,7 @@ export const EditOrder = () => {
                   value={modifyInfo.location}
                   onChange={(e) => setModifyInfo({ ...modifyInfo, location: e.target.value })}>
                   {countries?.map((country, index) => (
-                    <option key={index} value={country.name}>{country.name}</option>
+                    <option key={index} value={country._id}>{country.name}</option>
                   ))}
                 </select>
               </div>

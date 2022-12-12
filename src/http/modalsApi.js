@@ -36,8 +36,14 @@ export const sendAccountRequest = async (ui, ar) => {
 }
 
 export const updateOrderInfo = async (orderId, ui, modifyInfo) => {
-  const request = { updateBody: modifyInfo }
-  const { data } = await $authHost.post(`accountRequests/update/request?orderID=${orderId}`, request)
+  const { data } = await $authHost.put("accountRequests/update", {
+    requestID: orderId,
+    typeID: modifyInfo.accountType,
+    locationID: modifyInfo.location,
+    currencyID: modifyInfo.currencyID,
+    price: modifyInfo.price,
+    quantity: modifyInfo.quantity
+  })
   return data
 }
 

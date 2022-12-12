@@ -9,7 +9,7 @@ export const CompletedTbody = ({ data }) => {
 
   function showActions(id, link) {
     const roleId = parseInt(createUserIdentity().roleID)
-    const canEdit = [2]
+    const canEdit = [1, 2]
     return (
       <div className={ss.actions}>
         {canEdit.includes(roleId) && <EditOrderBtn orderId={id} />}

@@ -13,7 +13,7 @@ export const PendingTbody = ({ data, ui }) => {
     const roleID = parseInt(createUserIdentity().roleID)
     const canStart = [5, 6]
     const canCancel = [3, 4, 7]
-    const canEdit = [2, 3, 4, 7]
+    const canEdit = [1, 2, 3, 4, 7]
     return (
       <div className={ss.actions}>
         {canEdit.includes(roleID) &&

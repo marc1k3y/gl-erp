@@ -5,14 +5,17 @@ import { CancelBtn } from "../buttons/cancelBtn"
 import { createUserIdentity } from "../../createUserIdentity"
 import { fileApi } from "../../../constants"
 import { setTableRowColor } from "../setTableRowColor"
+import { EditOrderBtn } from "../buttons/editOrder"
 
 export const InWorkTbody = ({ data }) => {
 
   function showActions(id, link) {
     const roleId = parseInt(createUserIdentity().roleID)
     const canClose = [5, 6]
+    const canEdit = [1]
     return (
       <div className={ss.actions}>
+        {canEdit.includes(roleId) && <EditOrderBtn orderId={id} />}
         {canClose.includes(roleId) &&
           <DoneBtn orderId={id} />}
         <CancelBtn orderId={id} />
