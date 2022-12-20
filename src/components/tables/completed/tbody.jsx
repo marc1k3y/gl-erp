@@ -2,18 +2,16 @@ import ss from "./style.module.css"
 import { converDate } from "../convertDate"
 import { EditOrderBtn } from "../buttons/editOrder"
 import { createUserIdentity } from "../../createUserIdentity"
-import { fileApi } from "../../../constants"
 import { setTableRowColor } from "../setTableRowColor"
 
 export const CompletedTbody = ({ data }) => {
-
   function showActions(id, link) {
     const roleId = parseInt(createUserIdentity().roleID)
     const canEdit = [1, 2]
     return (
       <div className={ss.actions}>
         {canEdit.includes(roleId) && <EditOrderBtn orderId={id} />}
-        {link && <a download={link} href={fileApi + link}>🔗</a>}
+        {link && <a download={link} href={link}>🔗</a>}
       </div>)
   }
 
@@ -44,7 +42,7 @@ export const CompletedTbody = ({ data }) => {
           <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
-          <td>{showActions(item._id, item.fileName)}</td>
+          <td>{showActions(item._id, item.driveLink)}</td>
         </tr>
       ))}
     </tbody>

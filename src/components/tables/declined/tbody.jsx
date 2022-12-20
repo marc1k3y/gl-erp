@@ -8,7 +8,6 @@ import { ReturnBtn } from "../buttons/returnBtn"
 import { returnFromDeclined } from "../../../http/actionBtns"
 import { setUpdaterAction } from "../../../store/updater/actions"
 import { setApproveModalAction } from "../../../store/modals/actions"
-import { fileApi } from "../../../constants"
 import { setTableRowColor } from "../setTableRowColor"
 
 export const DeclinedTbody = ({ data, ui }) => {
@@ -38,7 +37,7 @@ export const DeclinedTbody = ({ data, ui }) => {
     return (
       <div className={ss.actions}>
         <ReturnBtn onClick={returnBtnHandler} />
-        {link && <a download={link} href={fileApi + link}>🔗</a>}
+        {link && <a download={link} href={link}>🔗</a>}
       </div>)
   }
 
@@ -53,7 +52,7 @@ export const DeclinedTbody = ({ data, ui }) => {
           <td>{item.location.iso}</td>
           <td>{item.cancelledBy.fullName}</td>
           <td>{item.cancellationCause}</td>
-          <td>{showActions(item._id, item.fileName)}</td>
+          <td>{showActions(item._id, item.driveLink)}</td>
           <Modal visible={approveModal} setVisible={setApproveModal}>
             <Approve approve={approve} title="Подтвердить возврат?" />
           </Modal>

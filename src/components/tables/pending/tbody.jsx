@@ -4,11 +4,9 @@ import { createUserIdentity } from "../../createUserIdentity"
 import { EditOrderBtn } from "../buttons/editOrder"
 import { StartBtn } from "../buttons/startBtn"
 import { CancelBtn } from "../buttons/cancelBtn"
-import { fileApi } from "../../../constants"
 import { setTableRowColor } from "../setTableRowColor"
 
 export const PendingTbody = ({ data, ui }) => {
-
   function showActions(id, link) {
     const roleID = parseInt(createUserIdentity().roleID)
     const canStart = [5, 6]
@@ -22,7 +20,7 @@ export const PendingTbody = ({ data, ui }) => {
           <StartBtn orderId={id} ui={ui} />}
         {canCancel.includes(roleID) &&
           <CancelBtn orderId={id} />}
-        {link && <a download={link} href={fileApi + link}>🔗</a>}
+        {link && <a download={link} href={link}>🔗</a>}
       </div>
     )
   }
@@ -49,7 +47,7 @@ export const PendingTbody = ({ data, ui }) => {
           <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
-          <td>{showActions(item._id, item.fileName)}</td>
+          <td>{showActions(item._id, item.driveLink)}</td>
         </tr>
       ))}
     </tbody>
