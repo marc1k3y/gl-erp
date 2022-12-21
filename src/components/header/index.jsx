@@ -22,7 +22,7 @@ export const Header = () => {
         <div>
           {username}
         </div>
-        <a href="https://g-front-test.azurewebsites.net/" style={{ backgroundColor: colors.button.bckg, color: colors.button.font }}>
+        <a href="https://g-front.azurewebsites.net/" style={{ backgroundColor: colors.button.bckg, color: colors.button.font }}>
           Назад
         </a>
       </div>
