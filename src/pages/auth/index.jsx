@@ -29,6 +29,7 @@ export const AuthPage = () => {
     setLoading(true)
     const userID = window.location.href.split("/")[3]
     if (userID) {
+      localStorage.clear()
       getTokenByUid(userID).then((token) => {
         const decode = jwtDecode(token)
         console.log(decode)
