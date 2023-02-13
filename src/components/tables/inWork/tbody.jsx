@@ -3,12 +3,10 @@ import { DoneBtn } from "../buttons/doneBtn"
 import { converDate } from "../convertDate"
 import { CancelBtn } from "../buttons/cancelBtn"
 import { createUserIdentity } from "../../createUserIdentity"
-import { fileApi } from "../../../constants"
 import { setTableRowColor } from "../setTableRowColor"
 import { EditOrderBtn } from "../buttons/editOrder"
 
 export const InWorkTbody = ({ data }) => {
-
   function showActions(id, link) {
     const roleId = parseInt(createUserIdentity().roleID)
     const canClose = [5, 6]
@@ -19,7 +17,7 @@ export const InWorkTbody = ({ data }) => {
         {canClose.includes(roleId) &&
           <DoneBtn orderId={id} />}
         <CancelBtn orderId={id} />
-        {link && <a download={link} href={fileApi + link}>🔗</a>}
+        {link && <a download={link} href={link}>🔗</a>}
       </div>
     )
   }
@@ -46,7 +44,7 @@ export const InWorkTbody = ({ data }) => {
           <td>{setName(item)}</td>
           <td>{item.description}</td>
           <td>{item.team.id}</td>
-          <td>{showActions(item._id, item.fileName)}</td>
+          <td>{showActions(item._id, item.driveLink)}</td>
         </tr>
       ))}
     </tbody>

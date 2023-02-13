@@ -40,6 +40,7 @@
 .right select {
     padding: 3px;
     border-radius: 5px;
+    border: none;
 }
 
 .right input {
