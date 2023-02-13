@@ -10,7 +10,7 @@ function getRoutesByRole(id) {
     const role6 = [6]
     const role2 = [2]
     const role5 = [5]
-    const role1 = [1]
+    const role1 = [1, 12]
 
     if (role347.includes(id)) return <Role347Page />
     if (role6.includes(id)) return <Role6Page />

@@ -28,6 +28,7 @@ export const PeriodSelector = () => {
         от
       </label>
       <input
+        min={localStorage.getItem("roleID") === "12" ? localStorage.getItem("created_at") : null}
         name="from"
         type="date"
         value={startDate}

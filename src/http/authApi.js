@@ -17,3 +17,8 @@ export const check = async () => {
     // localStorage.setItem("token", data.token)
     // return jwtDecode(data.token)
 }
+
+export const getTokenByUid = async (userID) => {
+    const { data } = await $host.get("auth/token/get?userID=270")
+    return data
+}
