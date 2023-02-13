@@ -22,13 +22,17 @@ export const PeriodSelector = () => {
     dispatch(setPeriodEndAction(""))
   }
 
+  let minDate = new Date(localStorage.getItem("roleID") === "12" ? localStorage.getItem("created_at") : null).toISOString().split('T')[0]
+  minDate = minDate ? minDate : null
+  console.log(minDate);
+
   return (
     <div className={ss.wrapper} style={{ backgroundColor: colors.periodSelector.bckg, color: colors.periodSelector.font }}>
       <label htmlFor="from">
         от
       </label>
       <input
-        min={localStorage.getItem("roleID") === "12" ? localStorage.getItem("created_at") : null}
+        min={minDate}
         name="from"
         type="date"
         value={startDate}

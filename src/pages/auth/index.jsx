@@ -37,7 +37,7 @@ export const AuthPage = () => {
         localStorage.setItem("roleID", decode.RoleId)
         localStorage.setItem("teamID", decode.TeamId)
         localStorage.setItem("token", token)
-        localStorage.setItem("created_at", decode.createdAt)
+        localStorage.setItem("created_at", decode.CreatedAt)
         dispatch(successAuthAction())
         setLoading(false)
       })
