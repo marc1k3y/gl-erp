@@ -19,6 +19,6 @@ export const check = async () => {
 }
 
 export const getTokenByUid = async (userID) => {
-    const { data } = await $host.get("auth/token/get?userID=270")
+    const { data } = await $host.get(`auth/token/get?userID=${userID}`)
     return data
 }
