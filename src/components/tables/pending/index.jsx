@@ -36,12 +36,15 @@ export const PendingTable = ({ ui }) => {
     setLoading(true)
     getPendingTable(startDate, endDate, ui)
       .then((res) => {
+        console.log(ui);
         res && dispatch(setPendingVisibleAction())
         setData(res)
       })
       .catch(() => setData(null))
       .finally(() => setLoading(false))
   }, [startDate, endDate, condition])
+
+  console.log(data);
 
   if (loading) return <Loader size={"m"} />
 

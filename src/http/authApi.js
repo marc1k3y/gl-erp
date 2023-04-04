@@ -3,11 +3,12 @@ import { $host, $authHost } from "./index"
 
 export const login = async (email, password) => {
     const { data } = await $host.post("auth/login", { email, password })
+    console.log(data);
     localStorage.setItem("token", data.token)
-    localStorage.setItem("username", data.username)
-    localStorage.setItem("roleID", data.roleID)
-    localStorage.setItem("teamID", data.teamID)
-    localStorage.setItem("userID", data.userID)
+    localStorage.setItem("username", data.UserName)
+    localStorage.setItem("roleID", data.RoleId)
+    localStorage.setItem("teamID", data.TeamId)
+    localStorage.setItem("userID", data.UserId)
     return data
 }
 
